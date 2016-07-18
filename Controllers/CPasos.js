@@ -48,6 +48,7 @@ var Pasos = mongoose.model('Pasos');
         var paso = new Pasos({
             Identificacion: req.body.Identificacion,
             Clave: req.body.Clave,
+            Sede: req.body.Sede,
             Plan: req.body.Plan,
             Dia_Plan: req.body.Dia_Plan,
             Mes_Plan: req.body.Mes_Plan,
@@ -95,7 +96,8 @@ var Pasos = mongoose.model('Pasos');
 
   //DELETE - Delete a User with specified ID
   exports.deleteUser = function(req, res) {
-    Pasos.findById(req.params.id, function(err, paso) {
+      Pasos.findById(req.params.id, function (err, paso) {
+          console.log(JSON.stringify(paso));
       paso.remove(function(err) {
         if(!err) {
       console.log('User with Id "'+ req.params.id +'" Removed Succefull');

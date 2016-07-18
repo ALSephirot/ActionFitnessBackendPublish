@@ -1,6 +1,7 @@
 exports = module.exports = function(app, mongoose) {
   var PasosSchema = new mongoose.Schema({
     Identificacion: String,
+    Sede: String,
     Clave: String,
     Plan: String,
     Dia_Plan: String,
