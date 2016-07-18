@@ -46,13 +46,13 @@ var Pasos = mongoose.model('Pasos');
     try
     {
         var paso = new Pasos({
-            Identificacion: req.body.BasicInfo.Identificacion,
-            Clave: req.body.BasicInfo.Clave,
-            Plan: req.body.BasicInfo.Plan,
-            Dia_Plan: req.body.BasicInfo.Dia_Plan,
-            Mes_Plan: req.body.BasicInfo.Mes_Plan,
-            Ano_Plan: req.body.BasicInfo.Ano_Plan,
-            Paso: req.body.BasicInfo.Paso
+            Identificacion: req.body.Identificacion,
+            Clave: req.body.Clave,
+            Plan: req.body.Plan,
+            Dia_Plan: req.body.Dia_Plan,
+            Mes_Plan: req.body.Mes_Plan,
+            Ano_Plan: req.body.Ano_Plan,
+            Paso: req.body.Paso
       });
 
       paso.save(function(err) {
