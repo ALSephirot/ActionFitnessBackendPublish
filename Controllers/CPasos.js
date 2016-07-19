@@ -90,6 +90,7 @@ var Pasos = mongoose.model('Pasos');
         if(!err) 
         {
             console.log('User "' + req.body.paso.Identificacion + '" Updated Succefull');
+            res.send(paso);
         }
         else
         {
