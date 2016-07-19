@@ -77,6 +77,8 @@ var Pasos = mongoose.model('Pasos');
   exports.updateUser = function(req, res)
   {
       Pasos.findById(req.params.id, function (err, paso) {
+          console.log("ingreso: ", paso)
+
           paso.Identificacion = req.body.Identificacion,
           paso.Clave = req.body.Clave,
           paso.Sede = req.body.Sede,
@@ -96,8 +98,6 @@ var Pasos = mongoose.model('Pasos');
         {
           console.log('ERROR: ' + err);
         }
-
-        res.send(paso);
       });
     });
   };
