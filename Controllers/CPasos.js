@@ -76,13 +76,20 @@ var Pasos = mongoose.model('Pasos');
   //PUT - Update a User already exists
   exports.updateUser = function(req, res)
   {
-    Pasos.findById(req.params.id, function(err, paso) {
-      paso.Paso = req.body.paso.Paso
+      Pasos.findById(req.params.id, function (err, paso) {
+          paso.Identificacion = req.body.Identificacion,
+          paso.Clave = req.body.paso.Clave,
+          paso.Sede = req.body.paso.Sede,
+          paso.Plan = req.body.paso.Plan,
+          paso.Dia_Plan = req.body.paso.Dia_Plan,
+          paso.Mes_Plan = req.body.paso.Mes_Plan,
+          paso.Ano_Plan = req.body.paso.Ano_Plan,
+          paso.Paso = req.body.paso.Paso
 
       paso.save(function(err) {
         if(!err) 
         {
-          console.log('User "'+ req.body.BasicInfo.Name +'" Updated Succefull');
+            console.log('User "' + req.body.paso.Identificacion + '" Updated Succefull');
         }
         else
         {
@@ -100,7 +107,8 @@ var Pasos = mongoose.model('Pasos');
           console.log(JSON.stringify(paso));
       paso.remove(function(err) {
         if(!err) {
-      console.log('User with Id "'+ req.params.id +'" Removed Succefull');
+            console.log('User with Id "' + req.params.id + '" Removed Succefull');
+            res.send(paso);
         } else {
       console.log('ERROR: ' + err);
         }
