@@ -78,18 +78,18 @@ var Pasos = mongoose.model('Pasos');
   {
       Pasos.findById(req.params.id, function (err, paso) {
           paso.Identificacion = req.body.Identificacion,
-          paso.Clave = req.body.paso.Clave,
-          paso.Sede = req.body.paso.Sede,
-          paso.Plan = req.body.paso.Plan,
-          paso.Dia_Plan = req.body.paso.Dia_Plan,
-          paso.Mes_Plan = req.body.paso.Mes_Plan,
-          paso.Ano_Plan = req.body.paso.Ano_Plan,
-          paso.Paso = req.body.paso.Paso
+          paso.Clave = req.body.Clave,
+          paso.Sede = req.body.Sede,
+          paso.Plan = req.body.Plan,
+          paso.Dia_Plan = req.body.Dia_Plan,
+          paso.Mes_Plan = req.body.Mes_Plan,
+          paso.Ano_Plan = req.body.Ano_Plan,
+          paso.Paso = req.body.Paso
 
       paso.save(function(err) {
         if(!err) 
         {
-            console.log('User "' + req.body.paso.Identificacion + '" Updated Succefull');
+            console.log('User "' + req.body.Identificacion + '" Updated Succefull');
             res.send(paso);
         }
         else
